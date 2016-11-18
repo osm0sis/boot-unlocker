@@ -79,6 +79,8 @@ public class bootLoader {
             return new bootLoader_OnePlusX();
         } else if (android.os.Build.DEVICE.equals("E1001")) {
             return new bootLoader_OnePlusX();
+        } else if (android.os.Build.DEVICE.equals("yotaphone2")) {
+            return new bootLoader_YotaPhone2();
         } else {
             return null;
         }
