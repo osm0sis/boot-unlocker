@@ -7,8 +7,8 @@ android {
         applicationId "net.segv11.bootunlocker"
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 26
-        versionName '1.6.2'
+        versionCode 27
+        versionName '1.6.3'
     }
 
     signingConfigs {
