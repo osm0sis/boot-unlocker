@@ -40,14 +40,14 @@ public class bootLoader_OnePlusX extends bootLoader {
      * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =
-            "dd ibs=1 count=1 skip=1048080 if=/dev/block/platform/msm_sdcc.1/by-name/aboot  # query ";
+            "dd ibs=1 count=1 skip=1048080 if=/dev/block/platform/msm_sdcc.1/by-name/aboot # query ";
     private static final String writeCommand =
-            "dd obs=1 count=1 seek=1048080 of=/dev/block/platform/msm_sdcc.1/by-name/aboot  # write ";
+            "dd obs=1 count=1 seek=1048080 of=/dev/block/platform/msm_sdcc.1/by-name/aboot # write ";
 
     private static final String queryTamperCommand =
-            "dd ibs=1 count=1 skip=1048084 if=/dev/block/platform/msm_sdcc.1/by-name/aboot  # query ";
+            "dd ibs=1 count=1 skip=1048084 if=/dev/block/platform/msm_sdcc.1/by-name/aboot # query ";
     private static final String writeTamperCommand =
-            "dd obs=1 count=1 seek=1048084 of=/dev/block/platform/msm_sdcc.1/by-name/aboot  # write ";
+            "dd obs=1 count=1 seek=1048084 of=/dev/block/platform/msm_sdcc.1/by-name/aboot # write ";
 
     /**
      * Locks or unlocks the bootloader

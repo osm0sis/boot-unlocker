@@ -33,7 +33,7 @@ public class bootLoader_N4 extends bootLoader {
      * Private constants for working with the lock state in the misc partition
      */
     private static final String queryCommand =
-            "dd ibs=1 count=1 skip=16400 if=/dev/block/platform/msm_sdcc.1/by-name/misc  # query ";
+            "dd ibs=1 count=1 skip=16400 if=/dev/block/platform/msm_sdcc.1/by-name/misc # query ";
     private static final String writeCommand =
             "dd obs=1 count=1 seek=16400 of=/dev/block/platform/msm_sdcc.1/by-name/misc # write ";
 
