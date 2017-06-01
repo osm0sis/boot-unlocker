@@ -79,6 +79,12 @@ public class bootLoader {
             return new bootLoader_OnePlusX();
         } else if (android.os.Build.DEVICE.equals("E1001")) {
             return new bootLoader_OnePlusX();
+        } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A1")) {
+            return new bootLoader_IH3LTE();
+        } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A2")) {
+            return new bootLoader_IH3LTE();
+        } else if (android.os.Build.DEVICE.equals("X553")) {
+            return new bootLoader_IH3LTE();
         } else {
             return null;
         }
