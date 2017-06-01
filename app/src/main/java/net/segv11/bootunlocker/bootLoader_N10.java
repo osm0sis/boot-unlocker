@@ -34,7 +34,7 @@ public class bootLoader_N10 extends bootLoader {
      * Private constants for working with the lock state in the param partition
      */
     private static final String queryCommand =
-            "dd ibs=1 count=1 skip=548 if=/dev/block/platform/dw_mmc.0/by-name/param  # query ";
+            "dd ibs=1 count=1 skip=548 if=/dev/block/platform/dw_mmc.0/by-name/param # query ";
     private static final String writeCommand =
             "dd obs=1 count=1 seek=548 of=/dev/block/platform/dw_mmc.0/by-name/param # write ";
 

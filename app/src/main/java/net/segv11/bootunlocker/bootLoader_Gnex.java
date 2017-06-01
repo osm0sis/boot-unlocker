@@ -33,7 +33,7 @@ public class bootLoader_Gnex extends bootLoader {
      * Private constants for working with the lock state in the param partition
      */
     private static final String queryCommand =
-            "dd ibs=1 count=1 skip=124 if=/dev/block/platform/omap/omap_hsmmc.0/by-name/param  # query ";
+            "dd ibs=1 count=1 skip=124 if=/dev/block/platform/omap/omap_hsmmc.0/by-name/param # query ";
     private static final String writeCommand =
             "dd obs=1 count=1 seek=124 of=/dev/block/platform/omap/omap_hsmmc.0/by-name/param # write ";
 
