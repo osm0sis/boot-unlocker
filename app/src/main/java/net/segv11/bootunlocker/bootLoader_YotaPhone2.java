@@ -14,7 +14,6 @@
  *   limitations under the License.                                           *
  ******************************************************************************/
 
-
 package net.segv11.bootunlocker;
 
 import android.util.Log;
@@ -36,7 +35,7 @@ public class bootLoader_YotaPhone2 extends bootLoader {
     private static final String queryCommand =
             "dd ibs=1 count=1 skip=5242384 if=/dev/block/platform/msm_sdcc.1/by-name/aboot  # query ";
     private static final String writeCommand =
-            "dd obs=1 count=1 seek=5242384 of=/dev/block/platform/msm_sdcc.1/by-name/aboot # write ";
+            "dd obs=1 count=1 seek=5242384 of=/dev/block/platform/msm_sdcc.1/by-name/aboot  # write ";
 
     /**
      * Locks or unlocks the bootloader
@@ -55,9 +54,8 @@ public class bootLoader_YotaPhone2 extends bootLoader {
         superUserCommandWithDataByte(writeCommand, outByte);
     }
 
-
     /**
-     * Finds out (from the aboot partition) if the bootloader is unlocked
+     * Finds out if the bootloader is unlocked
      */
     @Override
     public int getBootLoaderState() {
@@ -79,6 +77,4 @@ public class bootLoader_YotaPhone2 extends bootLoader {
             return BL_UNKNOWN;
         }
     }
-
-
 }

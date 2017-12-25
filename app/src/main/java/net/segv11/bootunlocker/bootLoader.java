@@ -39,7 +39,7 @@ public class bootLoader {
     // how long to wait after calling su to update param
     // before we update the UI:
     public static final long delayAfterChange = 200;    // 200ms
-    private static final long launchDelay = 30;            // 30ms
+    private static final long launchDelay = 30;         // 30ms
 
     /**
      * For logging
@@ -134,7 +134,7 @@ public class bootLoader {
     }
 
     /**
-     * Finds out  if the bootloader is unlocked and if the tamper flag is set
+     * Finds out if the bootloader is unlocked and if the tamper flag is set
      */
     public int getBootLoaderState() {
         // We override this in subclasses

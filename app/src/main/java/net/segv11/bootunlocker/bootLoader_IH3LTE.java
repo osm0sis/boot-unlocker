@@ -33,7 +33,8 @@ public class bootLoader_IH3LTE extends bootLoader {
      * The bit for unlocked bootloader is at ? in the aboot partition.
      * The tamper flag should be at ?.
      *
-     * 01 for unlocked; 01 for tampered
+     * 01 for unlocked
+	 * 01 for tampered
      */
 
     /**
@@ -112,7 +113,7 @@ public class bootLoader_IH3LTE extends bootLoader {
                     return BL_TAMPERED_LOCKED;
                 }
             } else if (lockResult == 1) {
-                if (tamperResult == 0) {
+                if (tamperResult == 1) {
                     return BL_UNLOCKED;
                 } else {
                     return BL_TAMPERED_UNLOCKED;
