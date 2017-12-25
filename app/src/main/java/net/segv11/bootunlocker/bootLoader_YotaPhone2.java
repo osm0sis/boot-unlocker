@@ -30,6 +30,12 @@ public class bootLoader_YotaPhone2 extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_YotaPhone2";
 
     /**
+     * The bit for unlocked bootloader is at 0x004FFE10 in the aboot partition.
+     *
+     * 01 for unlocked
+     */
+
+    /**
      * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =

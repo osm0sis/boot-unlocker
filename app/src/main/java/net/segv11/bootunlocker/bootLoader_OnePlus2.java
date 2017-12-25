@@ -31,7 +31,7 @@ public class bootLoader_OnePlus2 extends bootLoader {
 
     /**
      * The bit for unlocked bootloader is at 0x00000010 in the devinfo partition.
-     * The tamper flag is at 0x00000014.
+     * The tamper flag should be at 0x00000014.
      *
      * 01 for unlocked
      * 01 for tampered

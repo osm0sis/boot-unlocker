@@ -31,7 +31,7 @@ public class bootLoader_YUYureka extends bootLoader {
 
     /**
      * The bit for unlocked bootloader is at 0x000FFE10 in the aboot partition.
-     * The tamper flag is at 0x000FFE14.
+     * The tamper flag should be at 0x000FFE14.
      *
      * 01 for unlocked
      * 01 for tampered

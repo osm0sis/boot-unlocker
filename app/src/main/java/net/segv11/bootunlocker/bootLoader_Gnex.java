@@ -30,6 +30,12 @@ public class bootLoader_Gnex extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_Gnex";
 
     /**
+     * The bit for unlocked bootloader is at 0x0000007C in the param partition.
+     *
+     * 00 for unlocked
+     */
+
+    /**
      * Private constants for working with the lock state in the param partition
      */
     private static final String queryCommand =

@@ -30,6 +30,12 @@ public class bootLoader_N10 extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_N10";
 
     /**
+     * The bit for unlocked bootloader is at 0x00000224 in the param partition.
+     *
+     * 01 for unlocked
+     */
+
+    /**
      * Private constants for working with the lock state in the param partition
      */
     private static final String queryCommand =
