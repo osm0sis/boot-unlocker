@@ -31,6 +31,12 @@ public class bootLoader_N7_2013 extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_N7_2013";
 
     /**
+     * The bit for unlocked bootloader is at 0x004FFC00 in the aboot partition.
+     *
+     * 02 for unlocked
+     */
+
+    /**
      * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =

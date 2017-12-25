@@ -171,7 +171,7 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 // Since we changed the bootloader lock state, we will pause for
-                // it to take effect.  This is OK because we are on a background
+                // it to take effect. This is OK because we are on a background
                 // thread.
                 try {
                     Thread.sleep(bootLoader.delayAfterChange);
@@ -193,7 +193,7 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 // Since we changed the bootloader tamper flag, we will pause for
-                // it to take effect.  This is OK because we are on a background
+                // it to take effect. This is OK because we are on a background
                 // thread.
                 try {
                     Thread.sleep(bootLoader.delayAfterChange);

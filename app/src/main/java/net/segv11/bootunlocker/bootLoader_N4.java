@@ -30,6 +30,14 @@ public class bootLoader_N4 extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_N4";
 
     /**
+     * The bit for unlocked bootloader is at 0x00004010 in the misc partition.
+     * The tamper flag should be at 0x00004014.
+     *
+     * 01 for unlocked
+     * 01 for tampered
+     */
+
+    /**
      * Private constants for working with the lock state in the misc partition
      */
     private static final String queryCommand =

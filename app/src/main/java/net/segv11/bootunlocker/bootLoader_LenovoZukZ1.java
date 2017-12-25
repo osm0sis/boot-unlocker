@@ -30,8 +30,8 @@ public class bootLoader_LenovoZukZ1 extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_LenovoZukZ1";
 
     /**
-     * The bit for unlocked bootloader is at ? in the aboot partition.
-     * The tamper flag is at ?.
+     * The bit for unlocked bootloader is at 0x001FFE10 in the aboot partition.
+     * The tamper flag should be at 0x001FFE14.
      *
      * 01 for unlocked
      * 01 for tampered
