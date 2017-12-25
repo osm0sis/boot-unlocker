@@ -34,9 +34,9 @@ public class bootLoader_N7_2013 extends bootLoader {
      * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =
-            "dd ibs=1 count=1 skip=5241856 if=/dev/block/platform/msm_sdcc.1/by-name/aboot # query ";
+            "dd ibs=1 count=1 skip=5241856 if=/dev/block/platform/msm_sdcc.1/by-name/aboot  # query ";
     private static final String writeCommand =
-            "dd obs=1 count=1 seek=5241856 of=/dev/block/platform/msm_sdcc.1/by-name/aboot # write ";
+            "dd obs=1 count=1 seek=5241856 of=/dev/block/platform/msm_sdcc.1/by-name/aboot  # write ";
 
     /**
      * Locks or unlocks the bootloader
@@ -55,9 +55,8 @@ public class bootLoader_N7_2013 extends bootLoader {
         superUserCommandWithDataByte(writeCommand, outByte);
     }
 
-
     /**
-     * Finds out (from the misc partition) if the bootloader is unlocked
+     * Finds out if the bootloader is unlocked
      */
     @Override
     public int getBootLoaderState() {
