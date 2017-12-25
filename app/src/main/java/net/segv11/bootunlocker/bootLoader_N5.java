@@ -85,7 +85,7 @@ public class bootLoader_N5 extends bootLoader {
     }
 
     /**
-     * Finds out  if the bootloader is unlocked and if the tamper flag is set
+     * Finds out if the bootloader is unlocked and if the tamper flag is set
      */
     @Override
     public int getBootLoaderState() {

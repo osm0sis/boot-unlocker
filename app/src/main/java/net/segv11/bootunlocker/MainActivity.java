@@ -31,7 +31,6 @@ import android.widget.TextView;
 
 import java.io.IOException;
 
-
 public class MainActivity extends ActionBarActivity {
 
     /**
@@ -46,7 +45,6 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -65,7 +63,6 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     /**
      * Called at the start of the visible lifetime
      */
@@ -78,7 +75,6 @@ public class MainActivity extends ActionBarActivity {
         Boolean setTamperFlag = false;
         Boolean desiredTamperFlag = dontCare;
         theBootLoader = bootLoader.makeBootLoader();
-
 
         TextView versionID = (TextView) findViewById(R.id.versionID);
         TextView modelID = (TextView) findViewById(R.id.modelID);
@@ -94,7 +90,6 @@ public class MainActivity extends ActionBarActivity {
             // Auto-generated catch block
             e.printStackTrace();
         }
-
 
         new AsyncBootLoader().execute(setState, desiredState, setTamperFlag, desiredTamperFlag);
     }
@@ -143,9 +138,9 @@ public class MainActivity extends ActionBarActivity {
         new AsyncBootLoader().execute(setState, desiredState, setTamperFlag, desiredTamperFlag);
     }
 
-
     private class AsyncBootLoader extends AsyncTask<Boolean, Void, Integer> {
-        /* Ideas for the future:
+        /**
+         * Ideas for the future:
     	 * 		Can we receive a broadcast intent when someone ELSE tweaks the param partition?
     	 * 		Do we want a progress indicator in case su takes a long time?
     	 *		Set text colors for lock status?
@@ -208,13 +203,11 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
 
-
             // Now query the bootloader lock state and tamper flag.
             return Integer.valueOf(theBootLoader.getBootLoaderState());
         } // doInBackground
 
-
-        /*
+        /**
          *  We don't override onProgresUpdate, because we're not
          *  taking that long
          */

@@ -34,7 +34,7 @@ public class bootLoader_OnePlusOne extends bootLoader {
      * The tamper flag should be at 0x000FFE14.
      *
      * 01 for unlocked
-	 * 01 for tampered
+     * 01 for tampered
      */
 
     /**
