@@ -5,7 +5,7 @@ This application *REQUIRES* a Galaxy Nexus (_maguro_, _toro_ or _toroplus_), Nex
 Nexus 5 (_hammerhead_), Nexus 7 2013 (_deb_ or _flo_), Nexus 10 (_manta_),
 !OnePlus One (_bacon_ / _A0001_), !OnePlus 2 (_OnePlus2_), !OnePlus X (_OnePlus_ / _ONE_ / _E1001_),
 !YU Yuphoria (_lettuce_ / _YUPHORIA_), !YU Yureka (_tomato_ / _YUREKA_), !Lenovo Zuk Z1 (_ham_ / _Z1_),
-!InFocus M810 (_VNA_), !InFocus M812 (_VN2_), or !Yota Phone 2 (_yotaphone2_), with root.
+!InFocus M810 (_VNA_), !InFocus M812 (_VN2_), !Yota Phone 2 (_yotaphone2_), or !Infinix HOT 3 LTE (_INFINIX-X553-A1_ / _INFINIX-X553-A2_ / _X553_), with root.
 
 --------
 
