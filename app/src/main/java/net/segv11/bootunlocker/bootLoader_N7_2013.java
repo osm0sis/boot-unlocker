@@ -16,15 +16,15 @@
 
 package net.segv11.bootunlocker;
 
-import android.util.*;
-import java.io.*;
+import android.util.Log;
+
+import java.io.IOException;
 
 /**
  * @description device-specific bootloader code for Nexus 7 tablets (2013 edition),
  * both WiFi-only and 3G
  */
-public class bootLoader_N7_2013 extends bootLoader
-{
+public class bootLoader_N7_2013 extends bootLoader {
     /**
      * For logging
      */
@@ -40,24 +40,20 @@ public class bootLoader_N7_2013 extends bootLoader
      * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =
-	"dd ibs=1 count=1 skip=5241856 if=/dev/block/platform/msm_sdcc.1/by-name/aboot  # query ";
+            "dd ibs=1 count=1 skip=5241856 if=/dev/block/platform/msm_sdcc.1/by-name/aboot  # query ";
     private static final String writeCommand =
-	"dd obs=1 count=1 seek=5241856 of=/dev/block/platform/msm_sdcc.1/by-name/aboot  # write ";
+            "dd obs=1 count=1 seek=5241856 of=/dev/block/platform/msm_sdcc.1/by-name/aboot  # write ";
 
     /**
      * Locks or unlocks the bootloader
      */
     @Override
-    public void setLockState(boolean newState) throws IOException
-	{
+    public void setLockState(boolean newState) throws IOException {
         int outByte;
-        if (newState)
-		{
+        if (newState) {
             outByte = 0;
             Log.i(TAG, "Locking bootloader by sending " + outByte + " to " + writeCommand);
-        }
-		else
-		{
+        } else {
             outByte = 2;
             Log.i(TAG, "Unlocking bootloader by sending " + outByte + " to " + writeCommand);
         }
@@ -69,30 +65,21 @@ public class bootLoader_N7_2013 extends bootLoader
      * Finds out if the bootloader is unlocked
      */
     @Override
-    public int getBootLoaderState()
-	{
-        try
-		{
+    public int getBootLoaderState() {
+        try {
             Log.v(TAG, "Getting bootloader state with " + queryCommand);
 
             int lockResult = superUserCommandWithByteResult(queryCommand);
 
             Log.v(TAG, "Got lock value " + lockResult);
-            if (lockResult == 0)
-			{
+            if (lockResult == 0) {
                 return BL_LOCKED;
-            }
-			else if (lockResult == 2)
-			{
+            } else if (lockResult == 2) {
                 return BL_UNLOCKED;
-            }
-			else
-			{
+            } else {
                 return BL_UNKNOWN;
             }
-        }
-		catch (IOException e)
-		{
+        } catch (IOException e) {
             Log.v(TAG, "Caught IOException while querying: " + e);
             return BL_UNKNOWN;
         }
