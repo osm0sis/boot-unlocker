@@ -30,8 +30,8 @@ public class bootLoader_IH3LTE extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_IH3LTE";
 
     /**
-     * The bit for unlocked bootloader is at ? in the aboot partition.
-     * The tamper flag should be at ?.
+     * The bit for unlocked bootloader is at 0x00073BC0 in the aboot partition.
+     * The tamper flag should be at 0x00073BC4.
      *
      * 01 for unlocked
      * 01 for tampered
@@ -41,14 +41,14 @@ public class bootLoader_IH3LTE extends bootLoader {
      * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =
-            "";
+            "dd ibs=1 count=1 skip=474048 if=/dev/block/platform/7824900.sdhci/by-name/aboot  # query ";
     private static final String writeCommand =
-            "";
+            "dd obs=1 count=1 seek=474048 of=/dev/block/platform/7824900.sdhci/by-name/aboot  # write ";
 
     private static final String queryTamperCommand =
-            "";
+            "dd ibs=1 count=1 skip=474052 if=/dev/block/platform/7824900.sdhci/by-name/aboot  # query ";
     private static final String writeTamperCommand =
-            "";
+            "dd obs=1 count=1 seek=474052 of=/dev/block/platform/7824900.sdhci/by-name/aboot  # write ";
 
     /**
      * Locks or unlocks the bootloader
