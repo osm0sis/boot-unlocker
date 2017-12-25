@@ -34,7 +34,7 @@ public class bootLoader_YUYuphoria extends bootLoader {
      * The tamper flag is at 0x000FFE14.
      *
      * 01 for unlocked
-	 * 01 for tampered
+     * 01 for tampered
      */
 
     /**

@@ -34,7 +34,7 @@ public class bootLoader_LenovoZukZ1 extends bootLoader {
      * The tamper flag is at ?.
      *
      * 01 for unlocked
-	 * 01 for tampered
+     * 01 for tampered
      */
 
     /**

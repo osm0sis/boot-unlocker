@@ -34,7 +34,7 @@ public class bootLoader_OnePlus2 extends bootLoader {
      * The tamper flag is at 0x00000014.
      *
      * 01 for unlocked
-	 * 01 for tampered
+     * 01 for tampered
      */
 
     /**
