@@ -40,6 +40,11 @@ internal storage. Device partitions, positions and state values
 * On the Yota Phone 2, the bootloader uses position
   `0x004FFE10` of the "aboot" partition, stored as `00` / `01`.
 
+* On the Infinix HOT 3 LTE, the bootloader uses position
+  '0x00073BC0' of the "aboot" partition, stored as '00' / '01'.
+  The Infinix HOT 3 LTE has a "Tamper" flag, at position
+  '0x00073BC4' of the "aboot" partition, stored as '00' / '01' (untampered/tampered).
+
 On devices with Tamper flag locations listed above,
 *BootUnlocker for Nexus Devices* can also set and clear this flag.
 You can also view this flag using "`fastboot oem device-info`".
