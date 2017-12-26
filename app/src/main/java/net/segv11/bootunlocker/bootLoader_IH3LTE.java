@@ -16,14 +16,15 @@
 
 package net.segv11.bootunlocker;
 
-import android.util.Log;
-
-import java.io.IOException;
+import android.util.*;
+import java.io.*;
 
 /**
  * @description device-specific bootloader code for Infinix HOT 3 LTE phones
  */
-public class bootLoader_IH3LTE extends bootLoader {
+public class bootLoader_IH3LTE extends bootLoader
+{
+
     /**
      * For logging
      */
@@ -41,25 +42,29 @@ public class bootLoader_IH3LTE extends bootLoader {
      * Private constants for working with the lock state in the aboot partition
      */
     private static final String queryCommand =
-            "dd ibs=1 count=1 skip=474048 if=/dev/block/platform/7824900.sdhci/by-name/aboot  # query ";
+    "dd ibs=1 count=1 skip=474048 if=/dev/block/platform/7824900.sdhci/by-name/aboot  # query ";
     private static final String writeCommand =
-            "dd obs=1 count=1 seek=474048 of=/dev/block/platform/7824900.sdhci/by-name/aboot  # write ";
+    "dd obs=1 count=1 seek=474048 of=/dev/block/platform/7824900.sdhci/by-name/aboot  # write ";
 
     private static final String queryTamperCommand =
-            "dd ibs=1 count=1 skip=474052 if=/dev/block/platform/7824900.sdhci/by-name/aboot  # query ";
+    "dd ibs=1 count=1 skip=474052 if=/dev/block/platform/7824900.sdhci/by-name/aboot  # query ";
     private static final String writeTamperCommand =
-            "dd obs=1 count=1 seek=474052 of=/dev/block/platform/7824900.sdhci/by-name/aboot  # write ";
+    "dd obs=1 count=1 seek=474052 of=/dev/block/platform/7824900.sdhci/by-name/aboot  # write ";
 
     /**
      * Locks or unlocks the bootloader
      */
     @Override
-    public void setLockState(boolean newState) throws IOException {
+    public void setLockState(boolean newState) throws IOException
+    {
         int outByte;
-        if (newState) {
+        if (newState)
+        {
             outByte = 0;
             Log.i(TAG, "Locking bootloader by sending " + outByte + " to " + writeCommand);
-        } else {
+        }
+        else
+        {
             outByte = 1;
             Log.i(TAG, "Unlocking bootloader by sending " + outByte + " to " + writeCommand);
         }
@@ -71,7 +76,8 @@ public class bootLoader_IH3LTE extends bootLoader {
      * Does this bootloader support a tamper flag?
      */
     @Override
-    public boolean hasTamperFlag() {
+    public boolean hasTamperFlag()
+    {
         return true;
     }
 
@@ -79,12 +85,16 @@ public class bootLoader_IH3LTE extends bootLoader {
      * Sets or clears the tamper flag
      */
     @Override
-    public void setTamperFlag(boolean newState) throws IOException {
+    public void setTamperFlag(boolean newState) throws IOException
+    {
         int outByte;
-        if (newState) {
+        if (newState)
+        {
             outByte = 1;
             Log.i(TAG, "Setting tamper flag by sending " + outByte + " to " + writeTamperCommand);
-        } else {
+        }
+        else
+        {
             outByte = 0;
             Log.i(TAG, "Clearing tamper flag by sending " + outByte + " to " + writeTamperCommand);
         }
@@ -96,8 +106,10 @@ public class bootLoader_IH3LTE extends bootLoader {
      * Finds out if the bootloader is unlocked and if the tamper flag is set
      */
     @Override
-    public int getBootLoaderState() {
-        try {
+    public int getBootLoaderState()
+    {
+        try
+        {
             Log.v(TAG, "Getting bootloader lock state with " + queryCommand);
             int lockResult = superUserCommandWithByteResult(queryCommand);
             Log.v(TAG, "Got lock value " + lockResult);
@@ -106,22 +118,35 @@ public class bootLoader_IH3LTE extends bootLoader {
             int tamperResult = superUserCommandWithByteResult(queryTamperCommand);
             Log.v(TAG, "Got tamper flag " + tamperResult);
 
-            if (lockResult == 0) {
-                if (tamperResult == 0) {
+            if (lockResult == 0)
+            {
+                if (tamperResult == 0)
+                {
                     return BL_LOCKED;
-                } else {
+                }
+                else
+                {
                     return BL_TAMPERED_LOCKED;
                 }
-            } else if (lockResult == 1) {
-                if (tamperResult == 0) {
+            }
+            else if (lockResult == 1)
+            {
+                if (tamperResult == 0)
+                {
                     return BL_UNLOCKED;
-                } else {
+                }
+                else
+                {
                     return BL_TAMPERED_UNLOCKED;
                 }
-            } else {
+            }
+            else
+            {
                 return BL_UNKNOWN;
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             Log.v(TAG, "Caught IOException while querying: " + e);
             return BL_UNKNOWN;
         }

@@ -16,16 +16,15 @@
 
 package net.segv11.bootunlocker;
 
-import android.util.Log;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import android.util.*;
+import java.io.*;
 
 /**
  * @description manages the interface to the bootloader for locking and unlocking
  */
-public class bootLoader {
+public class bootLoader
+{
+
     /**
      * constants describing bootloader state
      */
@@ -49,61 +48,115 @@ public class bootLoader {
     /**
      * checks if we know how to lock/unlock the bootloader on this device
      */
-    public static bootLoader makeBootLoader() {
+    public static bootLoader makeBootLoader()
+    {
         Log.v(TAG, "DEVICE = " + android.os.Build.DEVICE);
-        if (android.os.Build.DEVICE.equals("maguro")) {
+        if (android.os.Build.DEVICE.equals("maguro"))
+        {
             return new bootLoader_Gnex();
-        } else if (android.os.Build.DEVICE.equals("toro")) {
+        }
+        else if (android.os.Build.DEVICE.equals("toro"))
+        {
             return new bootLoader_Gnex();
-        } else if (android.os.Build.DEVICE.equals("toroplus")) {
+        }
+        else if (android.os.Build.DEVICE.equals("toroplus"))
+        {
             return new bootLoader_Gnex();
-        } else if (android.os.Build.DEVICE.equals("manta")) {
+        }
+        else if (android.os.Build.DEVICE.equals("manta"))
+        {
             return new bootLoader_N10();
-        } else if (android.os.Build.DEVICE.equals("mako")) {
+        }
+        else if (android.os.Build.DEVICE.equals("mako"))
+        {
             return new bootLoader_N4();
-        } else if (android.os.Build.DEVICE.equals("hammerhead")) {
+        }
+        else if (android.os.Build.DEVICE.equals("hammerhead"))
+        {
             return new bootLoader_N5();
-        } else if (android.os.Build.DEVICE.equals("flo")) {
+        }
+        else if (android.os.Build.DEVICE.equals("flo"))
+        {
             return new bootLoader_N7_2013();
-        } else if (android.os.Build.DEVICE.equals("deb")) {
+        }
+        else if (android.os.Build.DEVICE.equals("deb"))
+        {
             return new bootLoader_N7_2013();
-        } else if (android.os.Build.DEVICE.equals("bacon")) {
+        }
+        else if (android.os.Build.DEVICE.equals("bacon"))
+        {
             return new bootLoader_OnePlusOne();
-        } else if (android.os.Build.DEVICE.equals("A0001")) {
+        }
+        else if (android.os.Build.DEVICE.equals("A0001"))
+        {
             return new bootLoader_OnePlusOne();
-        } else if (android.os.Build.DEVICE.equals("OnePlus2")) {
+        }
+        else if (android.os.Build.DEVICE.equals("OnePlus2"))
+        {
             return new bootLoader_OnePlus2();
-        } else if (android.os.Build.DEVICE.equals("OnePlus")) {
+        }
+        else if (android.os.Build.DEVICE.equals("OnePlus"))
+        {
             return new bootLoader_OnePlusX();
-        } else if (android.os.Build.DEVICE.equals("ONE")) {
+        }
+        else if (android.os.Build.DEVICE.equals("ONE"))
+        {
             return new bootLoader_OnePlusX();
-        } else if (android.os.Build.DEVICE.equals("E1001")) {
+        }
+        else if (android.os.Build.DEVICE.equals("E1001"))
+        {
             return new bootLoader_OnePlusX();
-        } else if (android.os.Build.DEVICE.equals("yotaphone2")) {
+        }
+        else if (android.os.Build.DEVICE.equals("yotaphone2"))
+        {
             return new bootLoader_YotaPhone2();
-        } else if (android.os.Build.DEVICE.equals("lettuce")) {
+        }
+        else if (android.os.Build.DEVICE.equals("lettuce"))
+        {
             return new bootLoader_YUYuphoria();
-        } else if (android.os.Build.DEVICE.equals("YUPHORIA")) {
+        }
+        else if (android.os.Build.DEVICE.equals("YUPHORIA"))
+        {
             return new bootLoader_YUYuphoria();
-        } else if (android.os.Build.DEVICE.equals("tomato")) {
+        }
+        else if (android.os.Build.DEVICE.equals("tomato"))
+        {
             return new bootLoader_YUYureka();
-        } else if (android.os.Build.DEVICE.equals("YUREKA")) {
+        }
+        else if (android.os.Build.DEVICE.equals("YUREKA"))
+        {
             return new bootLoader_YUYureka();
-        } else if (android.os.Build.DEVICE.equals("ham")) {
+        }
+        else if (android.os.Build.DEVICE.equals("ham"))
+        {
             return new bootLoader_LenovoZukZ1();
-        } else if (android.os.Build.DEVICE.equals("Z1")) {
+        }
+        else if (android.os.Build.DEVICE.equals("Z1"))
+        {
             return new bootLoader_LenovoZukZ1();
-        } else if (android.os.Build.DEVICE.equals("VNA")) {
+        }
+        else if (android.os.Build.DEVICE.equals("VNA"))
+        {
             return new bootLoader_InFocusM810();
-        } else if (android.os.Build.DEVICE.equals("VN2")) {
+        }
+        else if (android.os.Build.DEVICE.equals("VN2"))
+        {
             return new bootLoader_InFocusM812();
-        } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A1")) {
+        }
+        else if (android.os.Build.DEVICE.equals("INFINIX-X553-A1"))
+        {
             return new bootLoader_IH3LTE();
-        } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A2")) {
+        }
+        else if (android.os.Build.DEVICE.equals("INFINIX-X553-A2"))
+        {
             return new bootLoader_IH3LTE();
-        } else if (android.os.Build.DEVICE.equals("X553")) {
+        }
+        else if (android.os.Build.DEVICE.equals("X553"))
+        {
             return new bootLoader_IH3LTE();
-        } else {
+        }
+        else
+        {
             return null;
         }
         // TODO: Should we check android.os.Build.BOOTLOADER ?
@@ -112,7 +165,8 @@ public class bootLoader {
     /**
      * Does this bootloader support a tamper flag?
      */
-    public boolean hasTamperFlag() {
+    public boolean hasTamperFlag()
+    {
         // We override this in relevant subclasses
         return false;
     }
@@ -120,7 +174,8 @@ public class bootLoader {
     /**
      * Locks or unlocks the bootloader
      */
-    public void setLockState(boolean newState) throws IOException {
+    public void setLockState(boolean newState) throws IOException
+    {
         // We override this in subclasses
         return;
     }
@@ -128,7 +183,8 @@ public class bootLoader {
     /**
      * Sets or clears the tamper flag
      */
-    public void setTamperFlag(boolean newState) throws IOException {
+    public void setTamperFlag(boolean newState) throws IOException
+    {
         // We override this in relevant subclasses
         return;
     }
@@ -136,7 +192,8 @@ public class bootLoader {
     /**
      * Finds out if the bootloader is unlocked and if the tamper flag is set
      */
-    public int getBootLoaderState() {
+    public int getBootLoaderState()
+    {
         // We override this in subclasses
         return BL_UNKNOWN;
     }
@@ -144,7 +201,8 @@ public class bootLoader {
     /**
      * Low-level code for pushing a write command through SU
      */
-    public void superUserCommandWithDataByte(String theCommand, int dataByte) throws IOException {
+    public void superUserCommandWithDataByte(String theCommand, int dataByte) throws IOException
+    {
         Process p = Runtime.getRuntime().exec("su");
         DataOutputStream w = new DataOutputStream(p.getOutputStream());
         // BufferedReader r = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -152,9 +210,12 @@ public class bootLoader {
         w.flush();
 
         // Wait for the command to launch
-        try {
+        try
+        {
             Thread.sleep(launchDelay);
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e)
+        {
             // Should not happen; if it does, we just keep going.
             e.printStackTrace();
         }
@@ -167,7 +228,8 @@ public class bootLoader {
     /**
      * Low-level code for pushing a query command through SU
      */
-    public int superUserCommandWithByteResult(String theCommand) throws IOException {
+    public int superUserCommandWithByteResult(String theCommand) throws IOException
+    {
         Process p = Runtime.getRuntime().exec("su");
         DataOutputStream w = new DataOutputStream(p.getOutputStream());
         DataInputStream r = new DataInputStream(p.getInputStream());
