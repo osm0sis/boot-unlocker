@@ -29,11 +29,12 @@ public class bootLoader_InFocusM812 extends bootLoader {
      */
     private static final String TAG = "net.segv11.bootLoader_InFocusM812";
 
-    /*
+    /**
      * The bit for unlocked bootloader is at 0x000FFE10 in the aboot partition.
-     * The tamper flag is at 0x000FFE14.
+     * The tamper flag should be at 0x000FFE14.
      *
-     * 01 for unlocked; 01 for tampered
+     * 01 for unlocked
+     * 01 for tampered
      */
 
     /**
@@ -92,7 +93,7 @@ public class bootLoader_InFocusM812 extends bootLoader {
     }
 
     /**
-     * Finds out  if the bootloader is unlocked and if the tamper flag is set
+     * Finds out if the bootloader is unlocked and if the tamper flag is set
      */
     @Override
     public int getBootLoaderState() {

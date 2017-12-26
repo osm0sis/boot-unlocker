@@ -2,7 +2,7 @@
 
 [B][SIZE="+2"]BootUnlocker for Nexus Devices -- Unlock your bootloader without fastboot.[/SIZE][/B]
 
-This application [B]REQUIRES[/B] a Galaxy Nexus ([I]maguro[/I], [I]toro[/I] or [I]toroplus[/I]), Nexus 4 ([I]mako[/I]), Nexus 5 ([I]hammerhead[/I]), Nexus 7 2013 ([I]deb[/I] or [I]flo[/I]), Nexus 10 ([I]manta[/I]), OnePlus One ([I]bacon[/I] / [I]A0001[/I]), OnePlus 2 ([I]OnePlus2[/I]), OnePlus X ([I]OnePlus[/I] / [I]ONE[/I] / [I]E1001[/I]), YU Yuphoria ([I]lettuce[/I] / [I]YUPHORIA[/I]), YU Yureka ([I]tomato[/I] / [I]YUREKA[/I]), Lenovo Zuk Z1 ([I]ham[/I] / [I]Z1[/I]), InFocus M810 ([I]VNA[/I]), InFocus M812 ([I]VN2[/I]), or Yota Phone 2 ([I]yotaphone2[/I]), with root.
+This application [B]REQUIRES[/B] a Galaxy Nexus ([I]maguro[/I], [I]toro[/I] or [I]toroplus[/I]), Nexus 4 ([I]mako[/I]), Nexus 5 ([I]hammerhead[/I]), Nexus 7 2013 ([I]deb[/I] or [I]flo[/I]), Nexus 10 ([I]manta[/I]), OnePlus One ([I]bacon[/I] / [I]A0001[/I]), OnePlus 2 ([I]OnePlus2[/I]), OnePlus X ([I]OnePlus[/I] / [I]ONE[/I] / [I]E1001[/I]), YU Yuphoria ([I]lettuce[/I] / [I]YUPHORIA[/I]), YU Yureka ([I]tomato[/I] / [I]YUREKA[/I]), Lenovo Zuk Z1 ([I]ham[/I] / [I]Z1[/I]), InFocus M810 ([I]VNA[/I]), InFocus M812 ([I]VN2[/I]), Yota Phone 2 ([I]yotaphone2[/I]), or Infinix HOT 3 LTE ([I]INFINIX-X553-A1[/I] / [I]INFINIX-X553-A2[/I] / [I]X553[/I]), with root.
 
 
 You've rooted your device, and you are trying to decide between the security of relocking your bootloader (with stock recovery and USB Debugging off), and the flexibility of leaving it unlocked.

@@ -39,7 +39,7 @@ public class bootLoader {
     // how long to wait after calling su to update param
     // before we update the UI:
     public static final long delayAfterChange = 200;    // 200ms
-    private static final long launchDelay = 30;            // 30ms
+    private static final long launchDelay = 30;         // 30ms
 
     /**
      * For logging
@@ -97,6 +97,12 @@ public class bootLoader {
             return new bootLoader_InFocusM810();
         } else if (android.os.Build.DEVICE.equals("VN2")) {
             return new bootLoader_InFocusM812();
+        } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A1")) {
+            return new bootLoader_IH3LTE();
+        } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A2")) {
+            return new bootLoader_IH3LTE();
+        } else if (android.os.Build.DEVICE.equals("X553")) {
+            return new bootLoader_IH3LTE();
         } else {
             return null;
         }
@@ -128,7 +134,7 @@ public class bootLoader {
     }
 
     /**
-     * Finds out  if the bootloader is unlocked and if the tamper flag is set
+     * Finds out if the bootloader is unlocked and if the tamper flag is set
      */
     public int getBootLoaderState() {
         // We override this in subclasses
@@ -174,5 +180,4 @@ public class bootLoader {
         w.close();
         return resultByte;
     }
-
 }

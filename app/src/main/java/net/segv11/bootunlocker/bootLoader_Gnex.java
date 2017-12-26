@@ -30,12 +30,18 @@ public class bootLoader_Gnex extends bootLoader {
     private static final String TAG = "net.segv11.bootLoader_Gnex";
 
     /**
+     * The bit for unlocked bootloader is at 0x0000007C in the param partition.
+     *
+     * 00 for unlocked
+     */
+
+    /**
      * Private constants for working with the lock state in the param partition
      */
     private static final String queryCommand =
             "dd ibs=1 count=1 skip=124 if=/dev/block/platform/omap/omap_hsmmc.0/by-name/param  # query ";
     private static final String writeCommand =
-            "dd obs=1 count=1 seek=124 of=/dev/block/platform/omap/omap_hsmmc.0/by-name/param # write ";
+            "dd obs=1 count=1 seek=124 of=/dev/block/platform/omap/omap_hsmmc.0/by-name/param  # write ";
 
     /**
      * Locks or unlocks the bootloader
@@ -54,9 +60,8 @@ public class bootLoader_Gnex extends bootLoader {
         superUserCommandWithDataByte(writeCommand, outByte);
     }
 
-
     /**
-     * Finds out (from the param partition) if the bootloader is unlocked
+     * Finds out if the bootloader is unlocked
      */
     @Override
     public int getBootLoaderState() {
@@ -78,6 +83,4 @@ public class bootLoader_Gnex extends bootLoader {
             return BL_UNKNOWN;
         }
     }
-
-
 }
