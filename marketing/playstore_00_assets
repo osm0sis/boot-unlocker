@@ -3,14 +3,14 @@ Play Store Title:
 
 
 Play Store Description:
-	/net.segv11.bootunlocker/assets/marketing/playstore_01_description
+	/net.segv11.bootunlocker/marketing/playstore_01_description
 
 Recent Changes:
-	Reformat from /net.segv11.bootunlocker/assets/wiki/changelog.txt
-	also include Known Issues: /net.segv11.bootunlocker/assets/wiki/KnownIssues.wiki
+	Reformat from /net.segv11.bootunlocker/wiki/ChangeLog.wiki
+	also include Known Issues: /net.segv11.bootunlocker/wiki/KnownIssues.wiki
 
 Promo Text:
-	On most pre-2014 Nexus Devices, unlock your bootloader without fastboot!
+	Unlock your bootloader without fastboot!
 
 Application Type:
 	Applications / Tools
@@ -28,11 +28,11 @@ Availability:
 	All locations
 
 Screenshots:	480x854 portrait	(actually 1280x720 and 1280x800 are now allowed too)
-	/net.segv11.bootunlocker/assets/art/screenshot_locked.png
-	/net.segv11.bootunlocker/assets/art/screenshot_unlocked.png
+	/net.segv11.bootunlocker/marketing/art/screenshot_locked.png
+	/net.segv11.bootunlocker/marketing/art/screenshot_unlocked.png
 	
 High Resolution Application Icon:	512x512
-	/net.segv11.bootunlocker/assets/art/ic_launcher_bootunlock.512.png
+	/net.segv11.bootunlocker/marketing/art/ic_launcher_bootunlock.512.png
 
 Promotional Graphic:	180x120 landscape
 	(TODO: Must be made before Promo Text can be used)

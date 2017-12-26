@@ -1,4 +1,4 @@
-This application REQUIRES a Galaxy Nexus (GSM, Verizon, or Sprint), Nexus 4, Nexus 5, Nexus 7 (2013), Nexus 10, OnePlus One, OnePlus 2, or OnePlus X with root.
+This application REQUIRES a Galaxy Nexus (GSM, Verizon, or Sprint), Nexus 4, Nexus 5, Nexus 7 (2013), Nexus 10, OnePlus One, OnePlus 2, OnePlus X, YU Yuphoria, YU Yureka, Lenovo Zuk Z1, InFocus M810, InFocus M812, or Yota Phone 2, with root.
 
 
 Nexus 6 and newer devices contain security measures in their bootloaders, connected with factory-reset protection. These measures make it very difficult to use root to lock/unlock the bootloader, and as a result it is unlikely that Nexus 6, Nexus 9, Nexus 5X and Nexus 6P will ever be supported.

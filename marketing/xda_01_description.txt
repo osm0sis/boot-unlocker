@@ -1,8 +1,8 @@
-[COLOR="Red"][B][U]NEW[/U]: Even though they are not Nexus devices, some OnePlus devices are now supported. [/B][/COLOR]
+[COLOR="Red"][B][U]NEW[/U]: beta version available! [/B][/COLOR]
 
 [B][SIZE="+2"]BootUnlocker for Nexus Devices -- Unlock your bootloader without fastboot.[/SIZE][/B]
 
-This application [B]REQUIRES[/B] a Galaxy Nexus ([I]maguro[/I], [I]toro[/I] or [I]toroplus[/I]), Nexus 4 ([I]mako[/I]), Nexus 5 ([I]hammerhead[/I]), Nexus 7 2013 ([I]deb[/I] or [I]flo[/I]), Nexus 10 ([I]manta[/I]), OnePlus One ([I]bacon[/I] / [I]A0001[/I]), OnePlus 2 ([I]OnePlus2[/I]), or OnePlus X ([I]OnePlus[/I] / [I]ONE[/I] / [I]E1001[/I]), with root.
+This application [B]REQUIRES[/B] a Galaxy Nexus ([I]maguro[/I], [I]toro[/I] or [I]toroplus[/I]), Nexus 4 ([I]mako[/I]), Nexus 5 ([I]hammerhead[/I]), Nexus 7 2013 ([I]deb[/I] or [I]flo[/I]), Nexus 10 ([I]manta[/I]), OnePlus One ([I]bacon[/I] / [I]A0001[/I]), OnePlus 2 ([I]OnePlus2[/I]), OnePlus X ([I]OnePlus[/I] / [I]ONE[/I] / [I]E1001[/I]), YU Yuphoria ([I]lettuce[/I] / [I]YUPHORIA[/I]), YU Yureka ([I]tomato[/I] / [I]YUREKA[/I]), Lenovo Zuk Z1 ([I]ham[/I] / [I]Z1[/I]), InFocus M810 ([I]VNA[/I]), InFocus M812 ([I]VN2[/I]), or Yota Phone 2 ([I]yotaphone2[/I]), with root.
 
 
 You've rooted your device, and you are trying to decide between the security of relocking your bootloader (with stock recovery and USB Debugging off), and the flexibility of leaving it unlocked.
@@ -19,7 +19,7 @@ You know that in order to prevent an unauthorized user from accessing your data 
 [URL]http://www.apache.org/licenses/LICENSE-2.0.html[/URL].
 You can redistribute, reuse, or modify this software as permitted under this license.
 
-Source code is maintained on Google Code, along current and previous versions of the complied application:
+Source code is maintained on GitHub, along current and previous versions of the complied application:
 [URL]https://github.com/segv11/boot-unlocker[/URL]
 
 [SIZE="1"]Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. [/SIZE]

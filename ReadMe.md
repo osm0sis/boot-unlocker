@@ -1,15 +1,15 @@
 ---
-title: Project Description; should be kept in sync with description in Admin pages
-tags: [Featured]
-...
 
-## BootUnlocker for Nexus Devices -- Unlock your bootloader without fastboot. ##
+## BootUnlocker -- Unlock your bootloader without fastboot. ##
 
 This application **REQUIRES** a Galaxy Nexus (*maguro*, *toro* or
 *toroplus*), Nexus 4 (*mako*), Nexus 5 (*hammerhead*), Nexus 7
 2013 (*deb* or *flo*), Nexus 10 (*manta*), OnePlus One
-(*bacon* / *A0001*), OnePlus 2 (*OnePlus2*), or OnePlus X
-(*OnePlus* / *ONE* / *E1001*), with root.
+(*bacon* / *A0001*), OnePlus 2 (*OnePlus2*), OnePlus X
+(*OnePlus* / *ONE* / *E1001*), YU Yuphoria (*lettuce* / *YUPHORIA*),
+YU Yureka (*tomato* / *YUREKA*), Lenovo Zuk Z1 (*ham* / *Z1*),
+InFocus M810 (*VNA*), InFocus M812 (*VN2*),
+or Yota Phone 2 (*yotaphone2*) with root.
 
 ------------------------------------------------------------------------
 
@@ -51,8 +51,8 @@ limitations under the License.
 
 ### Links
 
-* Change Log: [ChangeLog]
-* Learn how _BootUnlocker for Nexus Devices_ works: [HowItWorks]
+* Change Log: [ChangeLog](ChangeLog.md)
+* Learn how _BootUnlocker for Nexus Devices_ works: [HowItWorks](HowItWorks.md)
 * Source Code: <https://github.com/segv11/boot-unlocker>
 * XDA Developers: <http://bit.ly/BootUnlocker>
 

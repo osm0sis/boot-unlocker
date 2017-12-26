@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "net.segv11.bootunlocker"
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 26
-        versionName '1.6.2'
+        versionCode 27
+        versionName '1.6.3'
     }
 
     signingConfigs {
@@ -30,14 +30,9 @@ android {
             // this is used to alter output directory and file name. If you don't need it
             // you can safely comment it out.
             applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def file = output.outputFile
-                    String parent = file.parent
-                    if (project.hasProperty('APK_EXPORT_DIR') && new File((String) APK_EXPORT_DIR).exists())
-                        parent = APK_EXPORT_DIR
-                    output.outputFile = new File(
-                            parent,
-                            defaultConfig.applicationId + "." + defaultConfig.versionName + ".apk"
+                variant.outputs.all { output ->
+                    outputFileName = new File(
+                            defaultConfig.applicationId + "-" + defaultConfig.versionName + ".apk"
                     )
                 }
             }

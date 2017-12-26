@@ -79,6 +79,24 @@ public class bootLoader {
             return new bootLoader_OnePlusX();
         } else if (android.os.Build.DEVICE.equals("E1001")) {
             return new bootLoader_OnePlusX();
+        } else if (android.os.Build.DEVICE.equals("yotaphone2")) {
+            return new bootLoader_YotaPhone2();
+        } else if (android.os.Build.DEVICE.equals("lettuce")) {
+            return new bootLoader_YUYuphoria();
+        } else if (android.os.Build.DEVICE.equals("YUPHORIA")) {
+            return new bootLoader_YUYuphoria();
+        } else if (android.os.Build.DEVICE.equals("tomato")) {
+            return new bootLoader_YUYureka();
+        } else if (android.os.Build.DEVICE.equals("YUREKA")) {
+            return new bootLoader_YUYureka();
+        } else if (android.os.Build.DEVICE.equals("ham")) {
+            return new bootLoader_LenovoZukZ1();
+        } else if (android.os.Build.DEVICE.equals("Z1")) {
+            return new bootLoader_LenovoZukZ1();
+        } else if (android.os.Build.DEVICE.equals("VNA")) {
+            return new bootLoader_InFocusM810();
+        } else if (android.os.Build.DEVICE.equals("VN2")) {
+            return new bootLoader_InFocusM812();
         } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A1")) {
             return new bootLoader_IH3LTE();
         } else if (android.os.Build.DEVICE.equals("INFINIX-X553-A2")) {
