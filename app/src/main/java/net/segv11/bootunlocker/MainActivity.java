@@ -37,7 +37,7 @@ import android.widget.TextView;
 import java.io.IOException;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
      * For logging
@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "net.segv11.mainActivity";
     private static final Boolean dontCare = false;
     private bootLoader theBootLoader = null;
+    protected Button lockButton;
+    protected Button unlockButton;
+    protected Button setButton;
+    protected Button clearButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        lockButton = (Button) findViewById(R.id.lockButton);
+        unlockButton = (Button) findViewById(R.id.unlockButton);
+        setButton = (Button) findViewById(R.id.setButton);
+        clearButton = (Button) findViewById(R.id.clearButton);
+
+        lockButton.setOnClickListener(this);
+        unlockButton.setOnClickListener(this);
+        setButton.setOnClickListener(this);
+        unlockButton.setOnClickListener(this);
     }
 
 
@@ -128,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Called from UI to unlock the bootloader
      */
-    public void doUnlockBootloader(View v) {
+    public void doUnlockBootloader() {
         Boolean setState = true;
         Boolean desiredState = false;
         Boolean setTamperFlag = false;
@@ -139,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Called from UI to lock the bootloader
      */
-    public void doLockBootloader(View v) {
+    public void doLockBootloader() {
         Boolean setState = true;
         Boolean desiredState = true;
         Boolean setTamperFlag = false;
@@ -150,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Called from UI to clear tamper flag
      */
-    public void doClearTamper(View v) {
+    public void doClearTamper() {
         Boolean setState = false;
         Boolean desiredState = dontCare;
         Boolean setTamperFlag = true;
@@ -161,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Called from UI to set tamper flag
      */
-    public void doSetTamper(View v) {
+    public void doSetTamper() {
         Boolean setState = false;
         Boolean desiredState = dontCare;
         Boolean setTamperFlag = true;
@@ -170,6 +184,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /***
+     * Handle clicks
+     */
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.lockButton:
+                doLockBootloader();
+                break;
+            case R.id.unlockButton:
+                doUnlockBootloader();
+                break;
+            case R.id.setButton:
+                doSetTamper();
+                break;
+            case R.id.clearButton:
+                doClearTamper();
+                break;
+        }
+    }
     private class AsyncBootLoader extends AsyncTask<Boolean, Void, Integer> {
         /* Ideas for the future:
     	 * 		Can we receive a broadcast intent when someone ELSE tweaks the param partition?
@@ -250,10 +285,6 @@ public class MainActivity extends AppCompatActivity {
 
             TextView bootLoaderStatusText = (TextView) findViewById(R.id.bootLoaderStatusText);
             TextView bootLoaderTamperFlagText = (TextView) findViewById(R.id.tamperFlagText);
-            Button lockButton = (Button) findViewById(R.id.lockButton);
-            Button unlockButton = (Button) findViewById(R.id.unlockButton);
-            Button setButton = (Button) findViewById(R.id.setButton);
-            Button clearButton = (Button) findViewById(R.id.clearButton);
 
             CardView tamperLL = findViewById(R.id.tamperLayout);
 
